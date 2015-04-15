@@ -41,7 +41,7 @@
 
  <target name="lint" description="Perform syntax check of sourcecode files">
   <echo>Performing lint check...</echo> 
-  <apply executable="php" checkreturn="true">
+  <apply executable="php" failonerror="true">
    <arg value="-l" />
 
    <fileset dir="./app/controllers">
