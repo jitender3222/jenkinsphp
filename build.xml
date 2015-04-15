@@ -2,10 +2,10 @@
 
 <project name="name-of-project" default="build" basedir=".">
  <target name="build"
-   depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit,phpcb"/>
+   depends="prepare,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit,phpcb"/>
 
  <target name="build-parallel"
-   depends="prepare,lint,tools-parallel,phpunit,phpcb"/>
+   depends="prepare,Checkstyle,tools-parallel,phpunit,phpcb"/>
 
  <target name="tools-parallel" description="Run tools in parallel">
   <parallel threadCount="2">
@@ -39,8 +39,8 @@
   <mkdir dir="./build/phpdox"/>
  </target>
 
- <target name="lint" description="Perform syntax check of sourcecode files">
-  <echo>Performing lint check...</echo> 
+ <target name="Checkstyle" description="Perform syntax check of sourcecode files">
+  <echo>Performing Checkstyle check...</echo> 
   <apply executable="php" failonerror="true">
    <arg value="-l" />
 
