@@ -39,9 +39,9 @@
   <mkdir dir="${project.basedir}/build/phpdox"/>
  </target>
 
- <!--<target name="lint" description="Perform syntax check of sourcecode files">
+ <target name="lint" description="Perform syntax check of sourcecode files">
   <echo>Performing lint check...</echo> 
-  <apply executable="php" checkreturn="true">
+  <apply executable="php" failonerror="true">
    <arg value="-l" />
 
    <fileset dir="${project.basedir}/app/controllers">
@@ -60,7 +60,7 @@
     <include name="**/*.php" />
    </fileset>
   </apply>
- </target>-->
+ </target>
 
  <target name="phploc" description="Measure project size using PHPLOC">
   <echo>Measuring project size...</echo> 
